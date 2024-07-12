@@ -21,7 +21,9 @@ document.addEventListener("DOMContentLoaded", function () {
                     imgContainer.appendChild(imgElement)
                 })
             })
-
+            .catch((error) => {
+                console.log(error);
+            });
 
     }
     getAllDog()
@@ -31,10 +33,6 @@ document.addEventListener("DOMContentLoaded", function () {
     function getAllBreeds() {
         fetch(breedUrl)
             .then((response) => response.json())
-
-
-
-
             .then(data => {
                 const breeds = data.message;
                 //    console.log(breeds);
@@ -49,6 +47,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
+            })
+            .catch((error) => {
+                console.log(error);
             });
     }
      
